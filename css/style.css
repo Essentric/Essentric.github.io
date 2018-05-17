@@ -47,6 +47,16 @@ a:visited {
 	color: inherit;
 	text-decoration: none;
 }
+.skill{
+	font-size: 2rem;
+	transform: scale(0,0);
+	transition: all .3s linear;
+}
+.skill:hover{
+	padding: 0.3rem;
+	/* transform: scale(1.5,1.5); */
+	border: 1px solid #ff0;
+}
 .chevron-down {
 	position: relative;
 	display: block;
@@ -338,6 +348,70 @@ HOME页面样式
 }
 
 /**********************
+progress_bar
+***********************/
+
+.progress_bar .pro-bar {
+		background: hsl(0, 0%, 97%);
+		box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+		height:4px;
+		margin-bottom: 12px;
+		margin-top: 50px;
+		position: relative;
+	}
+	.progress_bar .progress_bar_title{
+		color: hsl(218, 4%, 50%);
+		color: #000;
+		font-size: 15px;
+		font-weight: 500;
+		position: relative;
+		top: -28px;
+		z-index: 1;
+	}
+	.progress_bar .progress_number{
+		float: right;
+		margin-top: -24px;
+	}
+	.progress_bar .progress-bar-inner {
+		background-color: hsl(0, 0%, 88%);
+		display: block;
+		width: 0;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: width 1s linear 0s;
+		animation: animate-positive 2s;
+	}
+	.progress_bar .progress-bar-inner:before {
+		content: "";
+		background-color: hsl(0, 0%, 100%);
+		border-radius: 50%;
+		width: 4px;
+		height: 4px;
+		position: absolute;
+		right: 1px;
+		top: 0;
+		z-index: 1;
+	}
+	.progress_bar .progress-bar-inner:after {
+		content: "";
+		width: 14px;
+		height: 14px;
+		background-color: inherit;
+		border-radius: 50%;
+		position: absolute;
+		right: -4px;
+		top: -5px;
+	}
+	@-webkit-keyframes animate-positive{
+		0% { width: 0%; }
+	}
+	@keyframes animate-positive{
+		0% { width: 0%; }
+	}
+
+/**********************
 ABOUT SECTION
 ***********************/
 
@@ -349,8 +423,10 @@ ABOUT SECTION
 	padding: 30px 0;
 }
 .about-box > .title{
+	font-size: 2rem;
 	padding: 12px 0;
 	text-align: center;
+	text-transform: none;
 }
 .about-box > .title:before{
 	content: "";
@@ -360,15 +436,16 @@ ABOUT SECTION
 	color: #ffe600;
 	font-size: 25px;
 	font-weight: 300;
+	text-transform: capitalize;
 }
 .about-box > .title.-one:before {
-	content: '01';
+	content: 'Tel';
 }
 .about-box > .title.-two:before {
-	content: '02';
+	content: 'Mail';
 }
 .about-box > .title.-three:before {
-	content: '03';
+	content: 'Q Q';
 }
 .about-box > .desc{
 	margin-top: 45px;
@@ -382,7 +459,7 @@ QUOTE SECTION
 
 .quote{
 	min-height: 600px;
-	padding: 250px 0;
+	padding: 200px 0;
 	background: linear-gradient(rgba(255, 230, 0, 0.8),rgba(255, 230, 0, 0.8)),url('../img/about_bg.jpg')
 }
 .quote .h2{
@@ -472,6 +549,7 @@ CLIENTS SECTION
 	width: 100%;
 	min-height: 90px;
 	padding: 15px 0;
+	text-align: center;
 }
 
 .clients .logo-box .client-logo {
@@ -487,6 +565,90 @@ CLIENTS SECTION
 	transform: translate(-50%, -50%);
 }
 
+/**********************
+CONTACT SECTION
+***********************/
+
+.contact .box-container {
+	margin-top: 110px;
+}
+
+.contact-form .row {
+	padding: 10px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+	display: block;
+	width: 100%;
+	padding: 13px 20px;
+	background: #ffe600;
+	color: #8e8e8e;
+	border: 1px solid #ffe600;
+	line-height: 1.5;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form input:active,
+.contact-form textarea:focus,
+.contact-form textarea:active {
+	outline: none;
+	border: 1px solid #8e8e8e;
+}
+
+.contact-form textarea {
+	resize: none;
+}
+
+.contact-form input::-webkit-input-placeholder,
+.contact-form textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ffffff;
+}
+.contact-form input::-moz-placeholder,
+.contact-form textarea::-moz-placeholder { /* Firefox 19+ */
+  color: #ffffff;
+}
+.contact-form input:-ms-input-placeholder,
+.contact-form textarea:-ms-input-placeholder { /* IE 10+ */
+  color: #ffffff;
+}
+.contact-form input:-moz-placeholder,
+.contact-form textarea:-moz-placeholder { /* Firefox 18- */
+  color: #ffffff;
+}
+
+.contact-form .btn-submit {
+	width: 100%;
+	padding: 10px;
+	background: #131316;
+	color: #ffe600;
+	border-radius: 0;
+	font-size: 20px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.contact-form .btn-submit:hover {
+	color: #131316;
+	background: transparent;
+	border: 1px solid #131316;
+}
+
+.contact-form .btn-submit:active,
+.contact-form .btn-submit:focus,
+.contact-form .btn-submit:hover {
+	outline: none;
+	box-shadow: none;
+}
 /**********************
 FOOTER SECTION
 ***********************/
@@ -561,6 +723,9 @@ RESPONSIVE
 		border-right: none;
 		border-bottom: 1px solid #ffe600;
 	}
+	.skill{
+		font-size: 3rem;
+	}
 }
 
 
@@ -594,6 +759,9 @@ RESPONSIVE
 	.navbar-default .navbar-nav>li>a {
 		text-align: center;
 	}
+	.skill{
+		font-size: 2rem;
+	}
 
 
 @media only screen and (max-width: 479px) {
@@ -608,5 +776,8 @@ RESPONSIVE
 	***********************/
 	.col-xxs-12 {
 		width: 100%;
+	}
+	.skill{
+		font-size: 1rem;
 	}
 }
